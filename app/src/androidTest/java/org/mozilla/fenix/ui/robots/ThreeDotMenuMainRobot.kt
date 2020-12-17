@@ -161,8 +161,8 @@ class ThreeDotMenuMainRobot {
 
         fun openBookmarks(interact: BookmarksRobot.() -> Unit): BookmarksRobot.Transition {
             onView(withId(R.id.mozac_browser_menu_recyclerView)).perform(ViewActions.swipeDown())
-            mDevice.findObject(UiSelector().resourceId("R.id.bookmark_list")).waitForExists(waitingTime)
             bookmarksButton().click()
+            mDevice.findObject(UiSelector().resourceId("R.id.bookmark_list")).waitForExists(waitingTime)
 
             BookmarksRobot().interact()
             return BookmarksRobot.Transition()
